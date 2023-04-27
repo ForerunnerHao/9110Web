@@ -10,9 +10,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./src/icon/doge03.ico" type="image/x-icon">
 </head>
 
 <body>
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg shadow-sm fixed-top" style="background-color: #fff;">
     <div class="container-fluid justify-content-between">
       <!-- Link image -->
@@ -227,11 +229,6 @@
     </div>
   </section>
 
-  <div class="fixed-bottom" style="width: 60px; margin-left: 90%; margin-bottom: 30px;">
-    <a href="#"><img id="img_chatBox" src="./src/SVG/doge02.svg" alt="chatBox" class=" zoomable "></a>
-  </div>
-
-
   <!-- offcanvas_cart -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header shadow-sm">
@@ -245,7 +242,8 @@
     <div class="offcanvas-body d-flex align-content-center justify-content-center flex-column">
       <div class=" d-flex align-items-center align-content-center justify-content-center flex-column">
         <img src="./src/SVG/nothing01.svg" alt="" class="w-75">
-        <p class="m-0" style="color: #293E3D; font-size: 20px; padding-top: 16px; font-weight: 500; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+        <p class="m-0"
+          style="color: #293E3D; font-size: 20px; padding-top: 16px; font-weight: 500; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
           Your cart is empty!
         </p>
         <!-- <button type="button" class="btn"
@@ -255,7 +253,8 @@
       </div>
     </div>
     <div style="width: 100%; height: 140px; " class="bottom-0">
-      <div class="d-flex flex-row justify-content-between shadow-sm" style="height: 64px; margin-bottom: 16px; padding-top: 6px;">
+      <div class="d-flex flex-row justify-content-between shadow-sm"
+        style="height: 64px; margin-bottom: 16px; padding-top: 6px;">
         <div class="d-flex flex-column" style="width: 240px;">
           <p class="m-0" style="color: #293E3D; padding-left: 10%; font-size: 22px; font-weight: bold;">Total</p>
           <p class="m-0" style="color: gray; padding-left: 10%; font-size: 8px;">Excluding the GST and service fees</p>
@@ -266,12 +265,56 @@
           </p>
         </div>
       </div>
-      <button type="button" class="btn"
-          style=" font-weight: bolder; margin-left: 10%; width: 80%; background: #FFC54A; color: white; height: 40px; padding: 0px; font-size: 18px; border-radius: 12px;">
-          Checkout
+      <button type="button" class="btn" disabled
+        style=" font-weight: bolder; margin-left: 10%; width: 80%; background: #FFC54A; color: white; height: 40px; padding: 0px; font-size: 18px; border-radius: 12px;">
+        Checkout
       </button>
     </div>
   </div>
+
+  <!-- chatBox -->
+  <div class="d-flex flex-column align-content-center justify-content-center align-items-end"  style=" position: fixed; width: 180px; bottom: 0px; right: 0px;">
+    <!-- <div class="shadow-lg" style="width: 100%;">
+      <p>Do you need help?</p>
+    </div> -->
+    <a  style="width:fit-content; margin-bottom: 20px; margin-right: 20px;">
+      <img onclick="controlChatBox()" id="img_chatBox" src="./src/SVG/doge_msg01.svg" alt="chatBox" style="width: 60px;" class=" zoomable ">
+    </a>
+  </div>
+  <div id="div_chatBox" class="chatBox shadow-lg z-3">
+    <!-- Header -->
+    <div class="d-flex flex-column align-content-center position-relative" style="width: 100%; height: 100%; padding: 0px; ">
+      <div class="shadow-sm d-flex flex-column align-items-center" style="background-color: #FFC54A; width: 100%; padding: 10px; border-radius: 10px;">
+        <p style="font-weight: bolder; color: #fff; font-size: 12px; padding: 0px; margin: 0px;">Alen Weak</p>
+        <p style="color: #fff; font-size: 2px; padding: 0px; margin: 0px;">Hi! Welcome</p>
+      </div>
+      <!-- Body -->
+      <div class="d-flex flex-row justify-content-center" style="height: 200px; margin: 0px; padding: 0px;">
+        <div class="d-flex align-items-end" >
+          <img src="./src/avatar/8.png" alt="" style="margin-bottom: 32px; width: 48px; border-radius: 20px;">
+        </div>
+        <div>
+          <div class="shadow-sm" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 10px; margin-left: 6px; margin-bottom: 0px; background: #fff; border-radius: 10px;">
+            <p style="padding: 10px; margin: 0px;">Hello!</p>
+          </div>
+          <div class="shadow-sm" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 5px; margin-left: 6px; background: #fff; border-radius: 10px;">
+            <p style="padding: 10px; margin: 0px;">Welcome to Dog Xercise!</p>
+          </div>
+          <div class="shadow-sm" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 5px; margin-left: 6px; background: #fff; border-radius: 10px;">
+            <p style="padding: 10px; margin: 0px;">
+              I'm Alen <br> Do you need any assistance?
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom -->
+      <div class="input-group-sm" style="position:absolute; bottom: 0px; width: 100%; padding: 0px 10px; margin: 10px 0px;">
+        <textarea class="form-control" placeholder="Ask here..." aria-label="With textarea"></textarea>
+      </div>
+    </div>
+  </div>
+
+
 
   <script src="./js/bootstrap.bundle.js"></script>
   <script src="./js/changeLanguage.js"></script>
@@ -313,17 +356,33 @@
       })
     }
 
-
     // zoom 1.2 img
     var img = document.getElementById("img_chatBox");
+    var new_img = new Image();
+    var old_img = new Image();
+    new_img.src = './src/SVG/doge03.svg';
+    old_img.src = './src/SVG/doge_msg01.svg';
 
-    img.addEventListener("mouseenter", function () {
-      img.style.transform = "scale(1.2)";
+    var chatBox = document.getElementById("div_chatBox");
+    //open chatbox
+    img.addEventListener("mouseenter", () => {
+      img.style.transform = "scale(0.9)";
     });
 
-    img.addEventListener("mouseleave", function () {
+    img.addEventListener("mouseleave", () => {
       img.style.transform = "scale(1)";
     });
+
+    var chatBox = document.getElementById("div_chatBox");
+
+
+    function controlChatBox() {
+      chatBox.classList.toggle('open');
+      if(img.src === old_img.src){
+        img.src = new_img.src;
+      } 
+    }
+
 
 
   </script>
