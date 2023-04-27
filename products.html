@@ -58,7 +58,8 @@
       <div>
         <a data-bs-toggle="offcanvas" href="#offcanvasExample" class="position-relative">
           <img style="width: 28px;" src="./src/SVG/cart.svg" alt="">
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          <span id="span_nav_itemNum"
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             0
           </span>
         </a>
@@ -68,6 +69,11 @@
 
     </div>
   </nav>
+  <!-- Alerts -->
+  <div id="liveAlertPlaceholder"
+    class="fixed-top d-flex flex-column justify-content-center align-content-center align-items-center"
+    style="margin-top: 50px; width: 100%;">
+  </div>
 
   <!-- Body -->
   <!-- Top -->
@@ -101,149 +107,553 @@
       <div style="margin-bottom: 30px;">
         <p id="section_welcome_mid"
           style="margin-top: -12px; margin-bottom: 0px; padding-bottom: 0px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #293E3D; font-size: 28px;">
-          Special Training Kit
+          Special Training Package
           <span class="badge text-bg-danger rounded-pill">Hot</span>
         </p>
       </div>
+
       <!-- Card list -->
-      <div class="d-flex align-content-center flex-wrap">
-        <div class="card" style="width: 15rem;">
-          <img src="./src/train_set02_carousel.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title" style="color: #293E3D;"><strong>基础训练装备</strong> </h5>
-            <p class="card-text">此训练装备适用于刚刚开始训练的狗狗。为您的狗狗提供基础的训练技能，包括遵守基本命令、散步礼仪和基本的行为修正。</p>
-          </div>
-          <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  装备清单：
+      <div class="d-flex flex-wrap">
+        <div class="row">
+          <!-- 01 -->
+          <div class="col" style="margin: 0px; margin-right: 20px; padding: 0px;">
+            <div class="card" style="width: 18rem; margin-bottom: 20px; padding: 0px;">
+              <img src="./src/train_set02_carousel.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title" style=" color: #293E3D;"><strong>Basic Equipment</strong> </h5>
+                <p class="card-text">
+                  This training gear is suitable for dogs who are just starting to train. Provides your dog with basic
+                  training skills,
+                  including following basic commands, walk etiquette, and basic behavior modification.
+                </p>
+              </div>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapse01" aria-expanded="false" aria-controls="collapse01">
+                      Equipment List
+                    </button>
+                  </h2>
+                  <div id="collapse01" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <ul class="list-group">
+                        <li class="list-group-item">
+                          Chain Collar
+                        </li>
+                        <li class="list-group-item">
+                          Simple Grip Pliers
+                        </li>
+                        <li class="list-group-item">
+                          Whistle
+                        </li>
+                        <li class="list-group-item">
+                          Guide rope
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- accordion -->
+
+              <!-- Cost -->
+              <div class="d-flex flex-row justify-content-center align-items-center" style="margin: 10px 0px;">
+                <p class="position-relative"
+                  style="font-weight: bolder; font-size: 24px;padding-right:15px; color: #293E3D; margin-bottom: 0px;">
+                  $49.99
+                  <span style="font-size: 8px; margin-top: 5px; margin-left: 0px;"
+                    class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
+                    NEW
+                  </span>
+                </p>
+                <button type="button" class="btn btn-outline-warning rounded-pill"
+                  style="width: 80px; font-weight: bolder;" data-bs-toggle="modal" data-bs-target="#modal01">
+                  Add
                 </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <ul class="list-group">
-                    <li class="list-group-item">
-                      链条颈圈 1个
-                    </li>
-                    <li class="list-group-item">
-                      简易抓握器 1个
-                    </li>
-                    <li class="list-group-item">
-                      口哨 1个
-                    </li>
-                    <li class="list-group-item">
-                      引导绳 1个
-                    </li>
-                  </ul>
               </div>
             </div>
           </div>
-          <div class="card-body">
-            <button type="button" class="btn btn-bd-primary"
-            style=" width: 160px; height: 40px; padding: 0px; font-size: 18px; border-radius: 12px; margin-top: 24px; font-family: 'Times New Roman', Times, serif;">
-            Add
-          </button>
-          </div>
-        </div>
-      </div>
-    </div>
 
-  </div>
+          <!-- 02 -->
+          <div class="col" style="margin: 0px; margin-right: 20px; padding: 0px;">
+            <div class="card" style="width: 18rem; margin-bottom: 20px; padding: 0px;">
+              <img src="./src/train_set03_bumperCar.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title" style=" color: #293E3D;"><strong>Advanced Equipment</strong> </h5>
+                <p class="card-text">
+                  This equipment is suitable for dogs who have mastered basic skills.
+                  Including further behavior modification and learning of some advanced commands.
+                </p>
+              </div>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapse02" aria-expanded="false" aria-controls="collapse02">
+                      Equipment List
+                    </button>
+                  </h2>
+                  <div id="collapse02" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <ul class="list-group">
+                        <li class="list-group-item">
+                          Professional Chain Collar
+                        </li>
+                        <li class="list-group-item">
+                          Premium Grip Pliers
+                        </li>
+                        <li class="list-group-item">
+                          Whistle
+                        </li>
+                        <li class="list-group-item">
+                          Guide Rope
+                        </li>
+                        <li class="list-group-item">
+                          Walking Bag
+                        </li>
+                        <li class="list-group-item">
+                          Lightweight Whip
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- accordion -->
 
-  <!-- offcanvas_cart -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header shadow-sm">
-      <h5
-        style="font-weight: bolder; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #293E3D;"
-        class="offcanvas-title position-relative" id="offcanvasExampleLabel">
-        SHOPPING CART
-      </h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body d-flex align-content-center justify-content-center flex-column">
-      <div class=" d-flex align-items-center align-content-center justify-content-center flex-column">
-        <img src="./src/SVG/nothing01.svg" alt="" class="w-75">
-        <p class="m-0"
-          style="color: #293E3D; font-size: 20px; padding-top: 16px; font-weight: 500; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-          Your cart is empty!
-        </p>
-        <!-- <button type="button" class="btn"
-            style="background: #FFC54A; color: white; width: 160px; height: 40px; padding: 0px; font-size: 18px; border-radius: 12px; margin-top: 24px; font-family: 'Times New Roman', Times, serif;">
-            SHOPPING
-          </button> -->
-      </div>
-    </div>
-    <div style="width: 100%; height: 140px; " class="bottom-0">
-      <div class="d-flex flex-row justify-content-between shadow-sm"
-        style="height: 64px; margin-bottom: 16px; padding-top: 6px;">
-        <div class="d-flex flex-column" style="width: 240px;">
-          <p class="m-0" style="color: #293E3D; padding-left: 10%; font-size: 22px; font-weight: bold;">Total</p>
-          <p class="m-0" style="color: gray; padding-left: 10%; font-size: 8px;">Excluding the GST and service fees</p>
-        </div>
-        <div class="">
-          <p class="m-0" style="font-size: 22px; padding-top: 20%;padding-right:15px">
-            $00.00
-          </p>
-        </div>
-      </div>
-      <button type="button" class="btn" disabled
-        style=" font-weight: bolder; margin-left: 10%; width: 80%; background: #FFC54A; color: white; height: 40px; padding: 0px; font-size: 18px; border-radius: 12px;">
-        Checkout
-      </button>
-    </div>
-  </div>
+              <!-- Cost -->
+              <div class="d-flex flex-row justify-content-center align-items-center" style="margin: 10px 0px;">
+                <p class="position-relative"
+                  style="font-weight: bolder; font-size: 24px;padding-right:15px; color: #293E3D; margin-bottom: 0px;">
+                  $64.59
+                  <span style="font-size: 8px; margin-top: 5px; margin-left: 0px;"
+                    class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
+                    NEW
+                  </span>
+                </p>
+                <button type="button" class="btn btn-outline-warning rounded-pill"
+                  style="width: 80px; font-weight: bolder;" data-bs-toggle="modal" data-bs-target="#modal02">
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
 
-  <!-- chatBox -->
-  <div class="d-flex flex-column align-content-center justify-content-center align-items-end"
-    style=" position: fixed; width: 180px; bottom: 0px; right: 0px;">
-    <a style="width:fit-content; margin-bottom: 20px; margin-right: 20px;">
-      <img onclick="controlChatBox()" id="img_chatBox" src="./src/SVG/doge_msg01.svg" alt="chatBox" style="width: 60px;"
-        class=" zoomable ">
-    </a>
-  </div>
-  <div id="div_chatBox" class="chatBox shadow-lg z-3">
-    <!-- Header -->
-    <div class="d-flex flex-column align-content-center position-relative"
-      style="width: 100%; height: 100%; padding: 0px; ">
-      <div class="shadow-sm d-flex flex-column align-items-center"
-        style="background-color: #FFC54A; width: 100%; padding: 10px; border-radius: 10px;">
-        <p style="font-weight: bolder; color: #fff; font-size: 12px; padding: 0px; margin: 0px;">Alen Weak</p>
-        <p style="color: #fff; font-size: 2px; padding: 0px; margin: 0px;">Hi! Welcome</p>
-      </div>
-      <!-- Body -->
-      <div class="d-flex flex-row justify-content-center" style="height: 200px; margin: 0px; padding: 0px;">
-        <div class="d-flex align-items-end">
-          <img src="./src/avatar/8.png" alt="" style="margin-bottom: 32px; width: 48px; border-radius: 20px;">
+          <!-- 03 -->
+          <div class="col" style="margin: 0px; margin-right: 20px; padding: 0px;">
+            <div class="card" style="width: 18rem; margin-bottom: 20px; padding: 0px;">
+              <img src="./src/train_set04_rollerCoaster.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title" style=" color: #293E3D;"><strong>Special Equipment</strong> </h5>
+                <p class="card-text">
+                  This kit is for dogs that need extra special attention,
+                  such as dogs with hyperexcitability, anxiety, or aggressive behavior.
+                </p>
+              </div>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapse03" aria-expanded="false" aria-controls="collapse03">
+                      Equipment List
+                    </button>
+                  </h2>
+                  <div id="collapse03" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <ul class="list-group">
+                        <li class="list-group-item">
+                          Special custom chain collar
+                        </li>
+                        <li class="list-group-item">
+                          Premium Grip Pliers
+                        </li>
+                        <li class="list-group-item">
+                          Whistle
+                        </li>
+                        <li class="list-group-item">
+                          Guide Rope
+                        </li>
+                        <li class="list-group-item">
+                          Walking Bag
+                        </li>
+                        <li class="list-group-item">
+                          Lightweight Whip
+                        </li>
+                        <li class="list-group-item">
+                          Dog comfort toys
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- accordion -->
+
+              <!-- Cost -->
+              <div class="d-flex flex-row justify-content-center align-items-center" style="margin: 10px 0px;">
+                <p class="position-relative"
+                  style="font-weight: bolder; font-size: 24px;padding-right:15px; color: #293E3D; margin-bottom: 0px;">
+                  $119.99
+                  <span style="font-size: 8px; margin-top: 5px; margin-left: 0px;"
+                    class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
+                    NEW
+                  </span>
+                </p>
+                <button type="button" class="btn btn-outline-warning rounded-pill"
+                  style="width: 80px; font-weight: bolder;" data-bs-toggle="modal" data-bs-target="#modal03">
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 04 -->
+          <div class="col" style="margin: 0px; margin-right: 20px; padding: 0px;">
+            <div class="card" style="width: 18rem; margin-bottom: 20px; padding: 0px;">
+              <img src="./src/train_set01_ferrisWheel.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title" style=" color: #293E3D;"><strong>Ultimate Equipment</strong> </h5>
+                <p class="card-text">
+                  This equipment is suitable for dogs who have mastered advanced skills. Includes complex commands,
+                  search and rescue drills, agility training and advanced behavior modification.
+                </p>
+              </div>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapse04" aria-expanded="false" aria-controls="collapse04">
+                      Equipment List
+                    </button>
+                  </h2>
+                  <div id="collapse04" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <ul class="list-group">
+                        <li class="list-group-item">
+                          Premium chain collar
+                        </li>
+                        <li class="list-group-item">
+                          Premium Grip Pliers
+                        </li>
+                        <li class="list-group-item">
+                          Whistle
+                        </li>
+                        <li class="list-group-item">
+                          Guide Rope
+                        </li>
+                        <li class="list-group-item">
+                          Walking Bag
+                        </li>
+                        <li class="list-group-item">
+                          Lightweight Whip
+                        </li>
+                        <li class="list-group-item">
+                          Dog Soothing Toy
+                        </li>
+                        <li class="list-group-item">
+                          Custom-made Agility Training Equipment
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- accordion -->
+
+              <!-- Cost -->
+              <div class="d-flex flex-row justify-content-center align-items-center" style="margin: 10px 0px;">
+                <p class="position-relative"
+                  style="font-weight: bolder; font-size: 24px;padding-right:15px; color: #293E3D; margin-bottom: 0px;">
+                  $149.99
+                  <span style="font-size: 8px; margin-top: 5px; margin-left: 0px;"
+                    class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
+                    NEW
+                  </span>
+                </p>
+                <button type="button" class="btn btn-outline-warning rounded-pill"
+                  style="width: 80px; font-weight: bolder;" data-bs-toggle="modal" data-bs-target="#modal04">
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div>
-          <div class="shadow-sm"
-            style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 10px; margin-left: 6px; margin-bottom: 0px; background: #fff; border-radius: 10px;">
-            <p style="padding: 10px; margin: 0px;">Hello!</p>
-          </div>
-          <div class="shadow-sm"
-            style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 5px; margin-left: 6px; background: #fff; border-radius: 10px;">
-            <p style="padding: 10px; margin: 0px;">Welcome to Dog Xercise!</p>
-          </div>
-          <div class="shadow-sm"
-            style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 5px; margin-left: 6px; background: #fff; border-radius: 10px;">
-            <p style="padding: 10px; margin: 0px;">
-              I'm Alen <br> Do you need any assistance?
+      </div> <!-- card list -->
+
+      <!-- offcanvas_cart -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <!-- Header -->
+        <div class="offcanvas-header shadow-sm">
+          <h5
+            style="font-weight: bolder; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #293E3D;"
+            class="offcanvas-title position-relative" id="offcanvasExampleLabel">
+            SHOPPING CART
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <!-- Mid List -->
+        <div class=" offcanvas-body d-flex flex-column">
+          <div id="div_emptyCart"
+            class="d-flex align-items-center align-content-center justify-content-center flex-column"
+            style="margin-top:40%;">
+            <img src="./src/SVG/nothing01.svg" alt="" class="w-75">
+            <p class="m-0"
+              style="color: #293E3D; font-size: 20px; padding-top: 16px; font-weight: 500; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+              Your cart is empty!
             </p>
           </div>
+
+          <!-- kit01 -->
+          <div id="div_kit01" class="d-none d-flex flex-row shadow-sm"
+            style="margin-top: 10px; padding: 10px; border-radius: 10px;">
+            <img src="./src/train_set02_carousel.png" alt="" style="width: 50px; border-radius: 20px;">
+            <div class="d-flex flex-column" style="margin-left: 20px;">
+              <p
+                style="margin-bottom: 0px;font-weight: bolder; color: #293E3D; font-size: 18px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                Basic Train Kit</p>
+              <p
+                style="margin-bottom: 0px;color: gray; font-size: 8px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                $49.99/each</p>
+            </div>
+            <div class="d-flex flex-column ms-auto justify-content-center align-content-center align-items-center">
+              <p
+                style="color: gray; padding: 0p; margin: 0px; font-size: 12px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                Amount: <span id="span_kit01_amount">1</span></p>
+              <p
+                style="color: #293E3D; padding: 0px; margin: 0px; font-weight: bolder; font-size: 20px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                $ <span id="span_kit01_total"><strong>49.99</strong></span> </p>
+            </div>
+          </div>
+
+          <!-- kit02 -->
+          <div id="div_kit02" class="d-none d-flex flex-row shadow-sm"
+            style="margin-top: 10px; padding: 10px; border-radius: 10px;">
+            <img src="./src/train_set03_bumperCar.png" alt="" style="width: 50px; border-radius: 20px;">
+            <div class="d-flex flex-column" style="margin-left: 20px;">
+              <p
+                style="margin-bottom: 0px;font-weight: bolder; color: #293E3D; font-size: 18px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                Advanced Train Kit</p>
+              <p
+                style="margin-bottom: 0px;color: gray; font-size: 8px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                $64.59/each</p>
+            </div>
+            <div class="d-flex flex-column ms-auto justify-content-center align-content-center align-items-center">
+              <p
+                style="color: gray; padding: 0p; margin: 0px; font-size: 12px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                Amount: <span id="span_kit02_amount">1</span></p>
+              <p
+                style="color: #293E3D; padding: 0px; margin: 0px; font-weight: bolder; font-size: 20px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                $ <span id="span_kit02_total"><strong>49.99</strong></span> </p>
+            </div>
+          </div>
+
+          <!-- kit03 -->
+          <div id="div_kit03" class="d-none d-flex flex-row shadow-sm"
+            style="margin-top: 10px; padding: 10px; border-radius: 10px;">
+            <img src="./src/train_set04_rollerCoaster.png" alt="" style="width: 50px; border-radius: 20px;">
+            <div class="d-flex flex-column" style="margin-left: 20px;">
+              <p
+                style="margin-bottom: 0px;font-weight: bolder; color: #293E3D; font-size: 18px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                Special Train Kit</p>
+              <p
+                style="margin-bottom: 0px;color: gray; font-size: 8px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                $119.99/each</p>
+            </div>
+            <div class="d-flex flex-column ms-auto justify-content-center align-content-center align-items-center">
+              <p
+                style="color: gray; padding: 0p; margin: 0px; font-size: 12px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                Amount: <span id="span_kit03_amount">1</span></p>
+              <p
+                style="color: #293E3D; padding: 0px; margin: 0px; font-weight: bolder; font-size: 20px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                $ <span id="span_kit03_total"><strong>49.99</strong></span> </p>
+            </div>
+          </div>
+
+          <!-- kit04 -->
+          <div id="div_kit04" class="d-none d-flex flex-row shadow-sm"
+            style="margin-top: 10px; padding: 10px; border-radius: 10px;">
+            <img src="./src/train_set01_ferrisWheel.png" alt="" style="width: 50px; border-radius: 20px;">
+            <div class="d-flex flex-column" style="margin-left: 20px;">
+              <p
+                style="margin-bottom: 0px;font-weight: bolder; color: #293E3D; font-size: 18px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                Ultimate Train Kit</p>
+              <p
+                style="margin-bottom: 0px;color: gray; font-size: 8px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                $149.99/each</p>
+            </div>
+            <div class="d-flex flex-column ms-auto justify-content-center align-content-center align-items-center">
+              <p
+                style="color: gray; padding: 0p; margin: 0px; font-size: 12px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                Amount: <span id="span_kit04_amount">1</span></p>
+              <p
+                style="color: #293E3D; padding: 0px; margin: 0px; font-weight: bolder; font-size: 20px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                $ <span id="span_kit04_total"><strong>49.99</strong></span> </p>
+            </div>
+          </div>
+
+        </div>
+        <!-- Buttom -->
+        <div style="width: 100%; height: 140px; " class=" mt-auto">
+          <div class="d-flex flex-row justify-content-between shadow-sm"
+            style="height: 64px; margin-bottom: 16px; padding-top: 6px;">
+            <div class="d-flex flex-column" style="width: 240px;">
+              <p class="m-0" style="color: #293E3D; padding-left: 10%; font-size: 22px; font-weight: bold;">Total</p>
+              <p class="m-0" style="color: gray; padding-left: 10%; font-size: 8px;">Excluding the GST and service fees
+              </p>
+            </div>
+            <div class="">
+              <p class="m-0" style="font-size: 22px; padding-top: 20%;padding-right:15px">
+                $ <span id="span_total">00.00</span>
+              </p>
+            </div>
+          </div>
+          <button id="button_checkout" type="button" class="btn disabled"
+            style=" font-weight: bolder; margin-left: 10%; width: 80%; background: #FFC54A; color: white; height: 40px; padding: 0px; font-size: 18px; border-radius: 12px;">
+            Checkout
+          </button>
         </div>
       </div>
-      <!-- Bottom -->
-      <div class="input-group-sm"
-        style="position:absolute; bottom: 0px; width: 100%; padding: 0px 10px; margin: 10px 0px;">
-        <textarea class="form-control" placeholder="Ask here..." aria-label="With textarea"></textarea>
+
+      <!-- chatBox -->
+      <div class="d-flex flex-column align-content-center justify-content-center align-items-end"
+        style=" position: fixed; width: 180px; bottom: 0px; right: 0px;">
+        <a style="width:fit-content; margin-bottom: 20px; margin-right: 20px;">
+          <img onclick="controlChatBox()" id="img_chatBox" src="./src/SVG/doge_msg01.svg" alt="chatBox"
+            style="width: 60px;" class=" zoomable ">
+        </a>
+      </div>
+      <div id="div_chatBox" class="chatBox shadow-lg z-3">
+        <!-- Header -->
+        <div class="d-flex flex-column align-content-center position-relative"
+          style="width: 100%; height: 100%; padding: 0px; ">
+          <div class="shadow-sm d-flex flex-column align-items-center"
+            style="background-color: #FFC54A; width: 100%; padding: 10px; border-radius: 10px;">
+            <p style="font-weight: bolder; color: #fff; font-size: 12px; padding: 0px; margin: 0px;">Alen Weak</p>
+            <p style="color: #fff; font-size: 2px; padding: 0px; margin: 0px;">Hi! Welcome</p>
+          </div>
+          <!-- Body -->
+          <div class="d-flex flex-row justify-content-center" style="height: 200px; margin: 0px; padding: 0px;">
+            <div class="d-flex align-items-end">
+              <img src="./src/avatar/8.png" alt="" style="margin-bottom: 32px; width: 48px; border-radius: 20px;">
+            </div>
+            <div>
+              <div class="shadow-sm"
+                style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 10px; margin-left: 6px; margin-bottom: 0px; background: #fff; border-radius: 10px;">
+                <p style="padding: 10px; margin: 0px;">Hello!</p>
+              </div>
+              <div class="shadow-sm"
+                style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 5px; margin-left: 6px; background: #fff; border-radius: 10px;">
+                <p style="padding: 10px; margin: 0px;">Welcome to Dog Xercise!</p>
+              </div>
+              <div class="shadow-sm"
+                style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 5px; margin-left: 6px; background: #fff; border-radius: 10px;">
+                <p style="padding: 10px; margin: 0px;">
+                  I'm Alen <br> Do you need any assistance?
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Bottom -->
+          <div class="input-group-sm"
+            style="position:absolute; bottom: 0px; width: 100%; padding: 0px 10px; margin: 10px 0px;">
+            <textarea class="form-control" placeholder="Ask here..." aria-label="With textarea"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 01 -->
+      <div class="modal fade" id="modal01" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"
+                style="font-weight: bolder; color: #293E3D; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                Add Products</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body shadow-sm" style="border-color: #FFC54A;">
+              Are you sure you want to add <code>Basic Training Equipment</code> to cart?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark rounded-3" data-bs-dismiss="modal">Cancel</button>
+              <button onclick="addItems(1)" id="alter01" type="button" class="btn btn-outline-warning rounded-3"
+                data-bs-dismiss="modal">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 02 -->
+      <div class="modal fade" id="modal02" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"
+                style="font-weight: bolder; color: #293E3D; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                Add Products</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body shadow-sm" style="border-color: #FFC54A;">
+              Are you sure you want to add <code>Advanced Training Equipment</code> to cart?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark rounded-3" data-bs-dismiss="modal">Cancel</button>
+              <button onclick="addItems(2)" id="alter02" type="button" class="btn btn-outline-warning rounded-3"
+                data-bs-dismiss="modal">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 03 -->
+      <div class="modal fade" id="modal03" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"
+                style="font-weight: bolder; color: #293E3D; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                Add Products</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body shadow-sm" style="border-color: #FFC54A;">
+              Are you sure you want to add <code>Special Training Equipment</code> to cart?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark rounded-3" data-bs-dismiss="modal">Cancel</button>
+              <button onclick="addItems(3)" id="alter03" type="button" class="btn btn-outline-warning rounded-3"
+                data-bs-dismiss="modal">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 04 -->
+      <div class="modal fade" id="modal04" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"
+                style="font-weight: bolder; color: #293E3D; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                Add Products</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body shadow-sm" style="border-color: #FFC54A;">
+              Are you sure you want to add <code>Ultimate Training Equipment</code> to cart?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark rounded-3" data-bs-dismiss="modal">Cancel</button>
+              <button onclick="addItems(4)" id="alter04" type="button" class="btn btn-outline-warning rounded-3"
+                data-bs-dismiss="modal">Confirm</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-
+  <!-- Load BootstrapJS -->
+  <script src="./js/changeLanguage.js"></script>
   <script src="./js/bootstrap.bundle.js"></script>
+  <!-- Animation -->
   <script>
     // zoom 1.2 img
     var img = document.getElementById("img_chatBox");
@@ -271,6 +681,128 @@
         img.src = new_img.src;
       }
     }
+
+  </script>
+  <!-- Add goods -->
+  <script>
+    var emptyCart = document.getElementById('div_emptyCart');
+    var total = document.getElementById('span_total');
+    var checkout = document.getElementById('button_checkout');
+
+    var kits = [
+      document.getElementById('div_kit01'),
+      document.getElementById('div_kit02'),
+      document.getElementById('div_kit03'),
+      document.getElementById('div_kit04'),
+    ]
+
+    var kits_num = [0, 0, 0, 0];
+    var kits_price = [49.99, 64.59, 119.99, 149.99];
+
+    var kits_amount = [
+      document.getElementById('span_kit01_amount'),
+      document.getElementById('span_kit02_amount'),
+      document.getElementById('span_kit03_amount'),
+      document.getElementById('span_kit04_amount'),
+    ]
+
+    var kits_total = [
+      document.getElementById('span_kit01_total'),
+      document.getElementById('span_kit02_total'),
+      document.getElementById('span_kit03_total'),
+      document.getElementById('span_kit04_total'),
+    ]
+
+    var kit01_total = document.getElementById('span_kit01_total');
+    var kit02_total = document.getElementById('span_kit02_total');
+    var kit03_total = document.getElementById('span_kit03_total');
+    var kit04_total = document.getElementById('span_kit04_total');
+
+    var itemNum = document.getElementById('span_nav_itemNum');
+    var itemNumText = 0;
+
+    // click add item
+    function addItems(number) {
+      itemNumText++;
+      itemNum.innerHTML = itemNumText;
+
+      // remove empty element
+      if (!emptyCart.classList.contains('d-none')) {
+        emptyCart.classList.add('d-none');
+      }
+
+      // appear kit list
+      if (kits[number - 1].classList.contains('d-none')) {
+        kits[number - 1].classList.remove('d-none');
+      }
+
+      // active checkout button
+      if (checkout.classList.contains('disabled')) {
+        checkout.classList.remove('disabled');
+      }
+
+      kits_num[number - 1]++;
+
+      kits_amount[number - 1].innerHTML = kits_num[number - 1];
+      kits_total[number - 1].innerHTML = (kits_num[number - 1] * kits_price[number - 1]).toFixed(2);
+
+      var totalPrice = 0;
+      for (let index = 0; index < kits.length; index++) {
+        totalPrice += kits_num[index] * kits_price[index];
+      }
+      total.innerHTML = totalPrice.toFixed(2);
+    }
+
+  </script>
+  <!-- Alter -->
+  <script>
+    var alertNum = 0;
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+    const appendAlert = (message, type) => {
+      const wrapper = document.createElement('div')
+      wrapper.innerHTML = [
+        `<div id="alert${alertNum}" class="alert alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>'
+      ].join('')
+
+      alertPlaceholder.append(wrapper)
+      alertNum++;
+    }
+    const alertTrigger01 = document.getElementById('alter01')
+    const alertTrigger02 = document.getElementById('alter02')
+    const alertTrigger03 = document.getElementById('alter03')
+    const alertTrigger04 = document.getElementById('alter04')
+
+    if (alertTrigger01) {
+      alertTrigger01.addEventListener('click', () => {
+        appendAlert('Nice, you have add <code> Basic Training Equipment </code> into the cart!', 'success')
+      })
+    }
+    if (alertTrigger02) {
+      alertTrigger02.addEventListener('click', () => {
+        appendAlert('Nice, you have add <code> Advanced Training Equipment </code> into the cart!', 'success')
+      })
+    }
+    if (alertTrigger03) {
+      alertTrigger03.addEventListener('click', () => {
+        appendAlert('Nice, you have add <code> Special Training Equipment </code> into the cart!', 'success')
+      })
+    }
+    if (alertTrigger04) {
+      alertTrigger04.addEventListener('click', () => {
+        appendAlert('Nice, you have add <code> Ultimate Training Equipment </code> into the cart!', 'success')
+      })
+    }
+
+        // function autoCloseAlter() {
+        //   setTimeout(() => {
+        //     const alert = document.getElementById('alert01');
+        //     alert.classList.toggle('alert-dismissible');
+        //   }, 3000);
+        // }
 
   </script>
 </body>

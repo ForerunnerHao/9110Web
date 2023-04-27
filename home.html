@@ -327,6 +327,7 @@
       language_list[i].index = i;
       language_list[i].addEventListener("click", function () {
         currentLanguage = this.index;
+        localStorage.setItem('currentLanguage', currentLanguage);
         document.getElementById("nav_home").innerHTML = nav_home[this.index];
         document.getElementById("nav_products").innerHTML = nav_products[this.index];
         document.getElementById("nav_bookings").innerHTML = nav_bookings[this.index];
