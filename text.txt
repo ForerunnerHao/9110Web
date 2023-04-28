@@ -125,7 +125,10 @@ certification. He is good at training large breeds and focuses on establishing a
 My training method can not only make your dog more obedient, but also make them more flexible, agile, and have better physical fitness.
 
 
-
+The pages are related to the functional requirements and business needs. 
+The system has pages on About us (student names, unikeys and roles), 
+Contact us information, Helpdesk/FAQ, Privacy policy, Site map, registration and login page, 
+plus at least TWO 2 level of successful hierarchical navigation (related to the submitted use cases). 
 
 
 
